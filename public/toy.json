@@ -1,0 +1,134 @@
+[
+    {
+        "name": "Cupcake Teddy",
+        "subCategory": "teddy",
+        "picture": "https://static4.depositphotos.com/1006452/390/i/600/depositphotos_3908471-stock-photo-sad-and-lonely-teddy-bear.jpg",
+        "price": 3000,
+        "rating": 4.5,
+        "sellerName": "Json Gill",
+        "sellerEmail": "gill@google.com",
+        "quantity": 1000,
+        "description": "This cupcake teddy is 160cm to 180cm.Its is a medium size teddy. Its color is deep brown.It will be given along with a cupcake toy."
+    },
+    {
+        "name": "Doctor Teddy",
+        "subCategory": "teddy",
+        "picture": "https://img.freepik.com/premium-photo/cute-brown-teddy-bear-colored-knitted-scarf-sitting-white-background_116441-7370.jpg?w=740",
+        "price": 5000,
+        "rating": 4.8,
+        "sellerName": "Min Forest",
+        "sellerEmail": "min@google.com",
+        "quantity": 500,
+        "description": "This doctor teddy is 80cm to 90cm.Its is a little size teddy. Its color is deep brown."
+    },
+    {
+        "name": "Cupcake Teddy",
+        "subCategory": "teddy",
+        "picture": "https://media.istockphoto.com/id/952081702/photo/cute-pink-bear-doll-with-bow-isolated-on-white-background-with-shadow-reflection-playful.jpg?s=612x612&w=0&k=20&c=oACmuhxJmXgS1zPfNa1JHUF6vSHR19ggDBRwjhZju4E=",
+        "price": 3000,
+        "rating": 4.5,
+        "sellerName": "Json Gill",
+        "sellerEmail": "gill@google.com",
+        "quantity": 1000,
+        "description": "This cupcake teddy is 160cm to 180cm.Its is a medium size teddy. Its color is deep brown.It will be given along with a cupcake toy."
+    },
+    {
+        "name": "Doctor Teddy",
+        "subCategory": "teddy",
+        "picture": "https://media.istockphoto.com/id/525900055/photo/toy-teddy-bear-isolated-on-white.jpg?s=612x612&w=0&k=20&c=_OrSfhuv2rERZD0ZfAI_mbV6p4rGMKvzZCbPFmx0-F0=",
+        "price": 5000,
+        "rating": 4.8,
+        "sellerName": "Min Forest",
+        "sellerEmail": "min@google.com",
+        "quantity": 500,
+        "description": "This doctor teddy is 80cm to 90cm.Its is a little size teddy. Its color is deep brown."
+    },
+    {
+        "name": "Dianohhdyrft",
+        "subCategory": "horse",
+        "picture": "https://t3.ftcdn.net/jpg/00/78/41/80/240_F_78418047_nCd2cSXvcliNfjUgMcQL26UxcLUQnbXQ.jpg",
+        "price": 12000,
+        "rating": 4.5,
+        "sellerName": "minu",
+        "sellerEmail": "mina@tina.com",
+        "quantity": 1200,
+        "description": "hi how are you. I am fine"
+    },
+    {
+        "name": "Babkiui",
+        "subCategory": "horse",
+        "picture": "https://t3.ftcdn.net/jpg/05/87/19/86/240_F_587198631_i3d0w6d4ZtIxjWbpn9v90R0D88DTaaua.jpg",
+        "price": 12000,
+        "rating": 4.5,
+        "sellerName": "minu",
+        "sellerEmail": "mina@tina.com",
+        "quantity": 1200,
+        "description": "hi how are you. I am fine"
+    },
+    {
+        "name": "Dianohhdyrft",
+        "subCategory": "horse",
+        "picture": "https://media.istockphoto.com/id/1312785138/photo/brown-stuffed-horse-toy-isolated-on-white.jpg?s=612x612&w=0&k=20&c=3WpoT6P2N6lbfA5okIB8ztiDHDEgRSONRLPxoVg4hV0=",
+        "price": 12000,
+        "rating": 4.5,
+        "sellerName": "minu",
+        "sellerEmail": "mina@tina.com",
+        "quantity": 1200,
+        "description": "hi how are you. I am fine"
+    },
+    {
+        "name": "Babkiui",
+        "subCategory": "horse",
+        "picture": "https://media.istockphoto.com/id/1287355722/photo/brown-plush-toy-horse-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=FxaFSPwxAAmX0mKOqCLxiEdk0Gp8gy6DKhWyYxeL4mo=",
+        "price": 12000,
+        "rating": 4.5,
+        "sellerName": "minu",
+        "sellerEmail": "mina@tina.com",
+        "quantity": 1200,
+        "description": "hi how are you. I am fine"
+    },
+    {
+        "name": "Oh Unityty",
+        "subCategory": "unicorn",
+        "picture": "https://t3.ftcdn.net/jpg/01/84/88/56/240_F_184885676_r9fvKI4y6FJe0mEENIJcDSf6QhWUf3cN.jpg",
+        "price": 12000,
+        "rating": 4.5,
+        "sellerName": "minu",
+        "sellerEmail": "mina@tina.com",
+        "quantity": 1200,
+        "description": "hi how are you. I am fine"
+    },
+    {
+        "name": "hfutio",
+        "subCategory": "unicorn",
+        "picture": "https://t4.ftcdn.net/jpg/05/93/27/19/240_F_593271958_taLqPEWDaYcjWhFiwf1WlAPjb4ICrcKl.jpg",
+        "price": 12000,
+        "rating": 4.5,
+        "sellerName": "minu",
+        "sellerEmail": "mina@tina.com",
+        "quantity": 1200,
+        "description": "hi how are you. I am fine"
+    },
+    {
+        "name": "Oh Unityty",
+        "subCategory": "unicorn",
+        "picture": "https://media.istockphoto.com/id/872810736/photo/crocheted-amigurumi-toy.jpg?s=612x612&w=0&k=20&c=3pMnLxSYauEdCe82yU2vvqQhg2xgL0Z52BQI6jcYqic=",
+        "price": 12000,
+        "rating": 4.5,
+        "sellerName": "minu",
+        "sellerEmail": "mina@tina.com",
+        "quantity": 1200,
+        "description": "hi how are you. I am fine"
+    },
+    {
+        "name": "hfutio",
+        "subCategory": "unicorn",
+        "picture": "https://media.istockphoto.com/id/1314268502/photo/unicorn-plush-toy-sitting-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=mqm2NuaUlJXneKVp_C7W8AAAUe5x3vMYUVqkWoSCQh8=",
+        "price": 12000,
+        "rating": 4.5,
+        "sellerName": "minu",
+        "sellerEmail": "mina@tina.com",
+        "quantity": 1200,
+        "description": "hi how are you. I am fine"
+    }
+]
