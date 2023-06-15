@@ -8,7 +8,7 @@ const SpecialSection = () => {
                     <h1 className="text-6xl font-bold text-amber-800">Our New Project</h1>
                     <p className='text-xl text-stone-600'>We are starting a new project for our special children. Where we will spend <br /> our donation for betterment of children with autism. Let together change the world one child at a time.</p>
                 </div>
-                <div className="w-full h-[700px] bg-amber-50 p-20 rounded-xl flex space-x-24 shadow-xl" >
+                <div className="w-full h-[700px] bg-[#c8901f38] p-20 rounded-xl flex space-x-24 shadow-xl" >
                     <img src='https://images.pexels.com/photos/7944016/pexels-photo-7944016.jpeg?auto=compress&cs=tinysrgb&w=1600' className="w-[600px] h-full shadow-2xl border-8  border-l-green-600 border-t-green-600 border-r-amber-500 border-b-amber-500" />
                     <div className='flex items-center h-full'>
                         <div className="space-y-12">
