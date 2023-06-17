@@ -3,6 +3,7 @@ import Main from "../Layouts/Main";
 import Home from "../pages/Home/Home/Home";
 import AddAToy from "../pages/AddAToy/AddAToy";
 import AllToys from "../pages/AllToys/AllToys";
+import ViewDetails from "../pages/ViewDetails/ViewDetails";
 
 const router = createBrowserRouter([
     {
@@ -19,9 +20,14 @@ const router = createBrowserRouter([
           loader: () => fetch('http://localhost:5000/toys')
         },
         {
+          path: "/toy/:id",
+          element: <ViewDetails></ViewDetails>,
+          loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`) 
+        },
+        {
           path:"/addAToy",
           element: <AddAToy></AddAToy>
-        }
+        },
       ]
     },
   ]);
