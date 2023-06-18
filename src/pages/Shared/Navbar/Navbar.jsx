@@ -32,7 +32,7 @@ const Navbar = () => {
                                     <img src={logo} alt="" />
                                 </Link>
                             </div>
-                            <h2 className="ml-[-20px] text-2xl lg:text-5xl font-bold">
+                            <h2 className="ml-3 text-2xl lg:text-5xl font-bold">
                                 <span className="text-amber-600">Toy</span>
                                 <span className="text-green-700 font-extrabold">Land</span>
                             </h2>
@@ -44,7 +44,9 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="navbar-end">
-
+                         <Link to="/login">
+                         <button className='bg-green-700  text-white text-center font-semibold py-3 px-7 rounded-md text-lg'>Login</button>
+                         </Link>
                     </div>
                 </div>
             </div>

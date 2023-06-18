@@ -9,14 +9,14 @@ const Footer = () => {
 
     return (
         <div>
-            <footer className="footer p-20 pb-14 bg-stone-100 text-base-content">
+            <footer className="footer p-20 pb-14 bg-stone-300 text-base-content">
                 <div className="flex justify-center items-center">
                     <div className="hidden lg:block">
                         <Link to='/'>
                             <img src={logo} alt="" />
                         </Link>
                     </div>
-                    <h2 className="ml-[-20px] text-2xl lg:text-5xl font-bold">
+                    <h2 className="ml-2 text-2xl lg:text-5xl font-bold">
                         <span className="text-amber-600">Toy</span>
                         <span className="text-green-700 font-extrabold">Land</span>
                     </h2>
