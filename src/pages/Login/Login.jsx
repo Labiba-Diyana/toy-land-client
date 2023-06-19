@@ -1,15 +1,48 @@
 import { Link } from 'react-router-dom';
 import backgroundImg from '../../assets/images/background/bg-login.png'
 import img from '../../assets/images/special/loginImg.png'
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
+
+    const { login, googleLogin } = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
-        const name = form .email.value;
-        const password = form .password.value;
-        console.log(name, password);
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        login(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                if (user) {
+                    alert('You have successfully logged in');
+                }
+            })
+            .catch(error => {
+                console.log(error)
+                if (error) {
+                    alert(error);
+                }
+            })
+    }
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                if (user) {
+                    alert('You have successfully logged in');
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     return (
@@ -40,7 +73,7 @@ const Login = () => {
                         </form>
                         <p className='text-center pt-2 text-lg font-medium text-stone-500'>New to ToyLand? <Link to="/register" className='text-green-600 text-xl'>Create New Account</Link></p>
                         <div className="divider py-4">OR</div>
-                            <button className="btn btn-outline w-full btn-success">Login With Google</button>
+                        <button onClick={handleGoogleLogin} className="btn btn-outline w-full btn-success font-bold">Login With Google</button>
                     </div>
                 </div>
             </div>

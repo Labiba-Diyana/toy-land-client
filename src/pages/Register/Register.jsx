@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
 import backgroundImg from '../../assets/images/background/bg-register.png'
 import img from '../../assets/images/special/registerImg.png'
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
+
+    const {createUser, googleLogin} = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -12,6 +16,32 @@ const Register = () => {
         const password = form .password.value;
         const photo = form .photo.value;
         console.log(name, email, password, photo);
+
+        createUser(email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            if(user){
+                alert('You have successfully logged in');
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
+    const handleGoogleLogin = () =>{
+        googleLogin()
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            if(user){
+                alert('You have successfully logged in');
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        })
     }
 
     return (
@@ -54,7 +84,7 @@ const Register = () => {
                         </form>
                         <p className='text-center pt-2 text-lg font-medium text-stone-500'>Already have an account? <Link to="/login" className='text-green-600 text-xl'>Login</Link></p>
                         <div className="divider py-4">OR</div>
-                        <button className="btn btn-outline w-full btn-success">Continue With Google</button>
+                        <button onClick={handleGoogleLogin} className="btn btn-outline font-bold w-full btn-success">Continue With Google</button>
                     </div>
                 </div>
             </div>
