@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Toy from "./Toy";
-import img from '../../assets/images/background/background-allToys.png'
+import img from '../../assets/images/background/bg-all-toys.png'
 import { useState } from "react";
 
 

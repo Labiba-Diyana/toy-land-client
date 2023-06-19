@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import img from '../../assets/images/background/background-details.png'
+import img from '../../assets/images/background/bg-details.png'
 
 const ViewDetails = () => {
     const toy = useLoaderData();
