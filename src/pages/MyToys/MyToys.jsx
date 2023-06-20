@@ -10,6 +10,9 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
     console.log(user.email);
     const [toys, setToys] = useState([]);
+    const [descending, setDescending] = useState([]);
+    const [ascending, setAscending] = useState([]);
+
 
 
     useEffect(() => {
@@ -18,10 +21,40 @@ const MyToys = () => {
             .then(data => setToys(data))
     }, []);
 
+    useEffect(() => {
+        fetch(`http://localhost:5000/toys/myToys/descending?email=${user.email}`)
+            .then(res => res.json())
+            .then(data => setDescending(data))
+    }, []);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/toys/myToys/ascending?email=${user.email}`)
+            .then(res => res.json())
+            .then(data => setAscending(data))
+    }, []);
+
+    const handleDescending = () => {
+        setToys(descending);
+    }
+
+    const handleAscending = () => {
+        setToys(ascending);
+    }
+
     return (
         <div style={{ backgroundImage: `url(${img})` }} className="text-center pt-32 pb-48 bg-[#c8901f38]">
             <h2 className="text-5xl font-bold text-amber-800 underline underline-offset-8 decoration-4 mb-20">My Toys</h2>
             <div className="px-20">
+                <div className="dropdown dropdown-bottom flex justify-end pb-8 pr-3">
+                    <label tabIndex={0} className="m-1"><button className="btn text-base bg-amber-800 border-none">
+                        Sort By Price
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-10 pl-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                    </button></label>
+                    <ul tabIndex={0} className="dropdown-content menu p-3 shadow  rounded-box w-52 bg-blue-200">
+                        <li className="" onClick={handleDescending}><a>Descending</a></li>
+                        <li onClick={handleAscending}><a>Ascending</a></li>
+                    </ul>
+                </div>
                 <table className="table w-full shadow-2xl rounded-xl">
                     {/* head */}
                     <thead>

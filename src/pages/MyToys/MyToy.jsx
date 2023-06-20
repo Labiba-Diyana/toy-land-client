@@ -16,7 +16,7 @@ const MyToy = ({ toy }) => {
             <td>
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
-                        <div className="mask mask-squircle w-32 h-32">
+                        <div className="mask mask-squircle w-28 h-28">
                             <img src={picture} alt="Avatar Tailwind CSS Component" />
                         </div>
                     </div>
