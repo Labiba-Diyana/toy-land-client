@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 const AddAToy = () => {
+
+    const {user} = useContext(AuthContext);
 
     const handleAddAToy = event => {
         event.preventDefault();
@@ -61,13 +65,13 @@ const AddAToy = () => {
                             <label className="label">
                                 <span className="label-text text-lg font-medium">User Name</span>
                             </label>
-                            <input type="text" name="name" placeholder="User Name" className="input input-bordered w-full border border-amber-600" />
+                            <input type="text" name="name" defaultValue={user?.displayName} placeholder="User Name" className="input input-bordered w-full border border-amber-600" />
                         </div>
                         <div className="form-control w-1/2 mx-5">
                             <label className="label">
                                 <span className="label-text text-lg font-medium">User Email</span>
                             </label>
-                            <input type="text" name="email" placeholder="Email" className="input input-bordered w-full border border-amber-600" />
+                            <input type="text" name="email" defaultValue={user?.email} placeholder="Email" className="input input-bordered w-full border border-amber-600" />
                         </div>
                     </div>
                     {/* Third Row */}
