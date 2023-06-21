@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Toy = ({ toy }) => {
     const { _id, toyName, name, subCategory, price, quantity } = toy;
-
+    console.log(typeof(price))
 
     return (
         <tr>

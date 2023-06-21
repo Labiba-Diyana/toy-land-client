@@ -2,7 +2,7 @@
 
 const MyToy = ({ toy }) => {
 
-    const { picture, toyName, name, email, subCategory, price, rating, quantity, detail } = toy
+    const { picture, toyName, name, email, subCategory, price, rating, quantity, detail } = toy;
 
     return (
         < tr >

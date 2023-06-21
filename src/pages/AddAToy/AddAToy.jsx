@@ -14,13 +14,12 @@ const AddAToy = () => {
         const name = form.name.value;
         const email = form.email.value;
         const subCategory = form.subCategory.value;
-        const price = form.price.value;
-        const rating = form.rating.value;
-        const quantity = form.quantity.value;
+        const price = parseFloat(form.price.value);
+        const rating = parseFloat(form.rating.value)
+        const quantity = parseFloat(form.quantity.value);
         const detail = form.detail.value;
 
         const newToy = { picture, toyName, name, email, subCategory, price, rating, quantity, detail };
-        console.log(newToy);
 
 
         fetch('http://localhost:5000/toys', {
@@ -86,7 +85,7 @@ const AddAToy = () => {
                             <label className="label">
                                 <span className="label-text text-lg font-medium">Price</span>
                             </label>
-                            <input type="number" name="price" placeholder="Price" className="input input-bordered w-full border border-amber-600" />
+                            <input type="text" name="price" placeholder="Price" className="input input-bordered w-full border border-amber-600" />
                         </div>
                     </div>
                     {/* fourth row */}
@@ -101,7 +100,7 @@ const AddAToy = () => {
                             <label className="label">
                                 <span className="label-text text-lg font-medium">Available Quantity</span>
                             </label>
-                            <input type="number" name="quantity" placeholder="Available Quantity" className="input input-bordered w-full border border-amber-600" />
+                            <input type="text" name="quantity" placeholder="Available Quantity" className="input input-bordered w-full border border-amber-600" />
                         </div>
                     </div>
                     <div className="form-control w-full mx-5">
