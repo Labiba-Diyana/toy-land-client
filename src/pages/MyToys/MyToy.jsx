@@ -47,7 +47,7 @@ const MyToy = ({ toy, handleDelete }) => {
                 </div>
             </td>
             <th>
-                <Link to={`/updateToy/${_id}`}><button className="btn btn-outline btn-error text-lg font-bold">Update</button></Link>
+                <Link to={`/update/${_id}`}><button className="btn btn-outline btn-error text-lg font-bold">Update</button></Link>
             </th>
         </tr >
     );

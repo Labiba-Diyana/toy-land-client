@@ -21,6 +21,7 @@ const AddAToy = () => {
         const detail = form.detail.value;
 
         const newToy = { picture, toyName, name, email, subCategory, price, rating, quantity, detail };
+        form.reset();
 
 
         fetch('http://localhost:5000/toys', {
@@ -32,7 +33,6 @@ const AddAToy = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             if(data.insertedId){
                 Swal.fire({
                     title: 'Success!',
@@ -116,8 +116,8 @@ const AddAToy = () => {
                         <textarea placeholder="Detail Description" name="detail" className="textarea textarea-bordered textarea-lg mr-10 border border-amber-600" ></textarea>
                     </div>
 
-                    <div className="flex mt-12">
-                        <input type="submit" value="Add Now" className='bg-amber-700 text-white text-center font-semibold w-full mx-5 py-4 px-9 rounded-md text-2xl' />
+                    <div className="flex mt-12 mx-5">
+                        <input type="submit" value="Add Now" className='btn btn-block mr-10 bg-amber-700 h-16 text-2xl border-none' />
                     </div>
 
                 </form>
