@@ -1,14 +1,15 @@
+import { Link } from "react-router-dom";
 
 
-const MyToy = ({ toy }) => {
+const MyToy = ({ toy, handleDelete }) => {
 
-    const { picture, toyName, name, email, subCategory, price, rating, quantity, detail } = toy;
+    const { _id, picture, toyName, name, email, subCategory, price, rating, quantity, detail } = toy;
 
     return (
         < tr >
             <th className="pl-14">
                 <label>
-                    <button className="btn btn-circle bg-orange-800 border-none">
+                    <button onClick={() => handleDelete(_id)} className="btn btn-circle bg-orange-800 border-none">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                     </button>
                 </label>
@@ -46,7 +47,7 @@ const MyToy = ({ toy }) => {
                 </div>
             </td>
             <th>
-                <button className="btn btn-outline btn-error text-lg font-bold">Update</button>
+                <Link to={`/updateToy/${_id}`}><button className="btn btn-outline btn-error text-lg font-bold">Update</button></Link>
             </th>
         </tr >
     );

@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import MyToy from "./MyToy";
 import img from "../../assets/images/background/bg-myToys.png"
+import Swal from "sweetalert2";
 
 
 
@@ -40,6 +41,36 @@ const MyToys = () => {
         setToys(ascending);
     }
 
+    const handleDelete = id => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/toys/myToys/${id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                            const remaining = toys.filter(toy => toy._id !== id);
+                            setToys(remaining);
+                        }
+                    })
+            }
+        })
+    }
+
     return (
         <div style={{ backgroundImage: `url(${img})` }} className="text-center pt-32 pb-48 bg-[#c8901f38]">
             <h2 className="text-5xl font-bold text-amber-800 underline underline-offset-8 decoration-4 mb-20">My Toys</h2>
@@ -75,6 +106,7 @@ const MyToys = () => {
                             toys.map(toy => <MyToy
                                 key={toy._id}
                                 toy={toy}
+                                handleDelete={handleDelete}
                             ></MyToy>)
                         }
                     </tbody>

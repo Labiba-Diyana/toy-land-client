@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2'
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
@@ -33,7 +34,12 @@ const AddAToy = () => {
         .then(data => {
             console.log(data);
             if(data.insertedId){
-                alert('successfully added')
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Your toy has been added successfully.',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                  })
             }
         })
     }
@@ -70,7 +76,7 @@ const AddAToy = () => {
                             <label className="label">
                                 <span className="label-text text-lg font-medium">User Email</span>
                             </label>
-                            <input type="text" name="email" defaultValue={user?.email} placeholder="Email" className="input input-bordered w-full border border-amber-600" />
+                            <input type="text" name="email" defaultValue={user?.email} readOnly placeholder="Email" className="input input-bordered w-full border border-amber-600" />
                         </div>
                     </div>
                     {/* Third Row */}
