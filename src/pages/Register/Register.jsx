@@ -3,45 +3,61 @@ import backgroundImg from '../../assets/images/background/bg-register.png'
 import img from '../../assets/images/special/registerImg.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
+import { updateProfile } from 'firebase/auth';
+
 
 const Register = () => {
 
-    const {createUser, googleLogin} = useContext(AuthContext);
+    const { createUser, googleLogin } = useContext(AuthContext);
 
-    const handleLogin = event => {
+    const handleRegister = event => {
         event.preventDefault();
         const form = event.target;
-        const name = form .name.value;
-        const email = form .email.value;
-        const password = form .password.value;
-        const photo = form .photo.value;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const photo = form.photo.value;
         console.log(name, email, password, photo);
 
         createUser(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-            if(user){
-                alert('You have successfully logged in');
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                if(user){
+                    alert('user have found')
+                }
+                update(result.user, name, photo)
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+            const update = (user, name, photo) => {
+                updateProfile(user, {
+                    displayName: name,
+                    photoURL: photo
+                })
+                .then(() => {
+                    console.log('first')
+                })
+                .catch(error => {
+                    console.log(error.message)
+                })
             }
-        })
-        .catch(error => {
-            console.log(error);
-        })
     }
 
-    const handleGoogleLogin = () =>{
+    const handleGoogleLogin = () => {
         googleLogin()
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-            if(user){
-                alert('You have successfully logged in');
-            }
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                if (user) {
+                    alert('You have successfully logged in');
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     return (
@@ -53,7 +69,7 @@ const Register = () => {
                 <div className="card flex-shrink-0 w-1/2 shadow-2xl bg-base-100">
                     <h2 className='text-5xl font-bold text-center pt-14'>Register your account</h2>
                     <div className="card-body p-16">
-                        <form onSubmit={handleLogin} className='space-y-3'>
+                        <form onSubmit={handleRegister} className='space-y-3'>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-lg font-semibold">Name</span>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import logo from '../../../assets/logo.svg'
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
 
@@ -17,28 +18,25 @@ const Navbar = () => {
 
     const navLinks =
         <>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/allToys">All Toys</Link></li>
+            <li className="text-xl font-bold text-amber-700"><Link to="/">Home</Link></li>
+            <li className="text-xl font-bold text-amber-700"><Link to="/allToys">All Toys</Link></li>
             {
                 user?.email ?
                     <>
-                        <li><Link to="/myToys">My Toys</Link></li>
-                        <li><Link to="/addAToy"> Add A Toy</Link></li>
-                        <li><button onClick={handleLogOut}>Log out</button></li>
+                        <li className="text-xl font-bold text-amber-700"><Link to="/myToys">My Toys</Link></li>
+                        <li className="text-xl font-bold text-amber-700"><Link to="/addAToy"> Add A Toy</Link></li>
                     </>
-                    : <Link to="/login">
-                        <button className='bg-green-700  text-white text-center font-semibold py-3 px-7 rounded-md text-lg'>Login</button>
-                    </Link>
+                    : <></>
             }
-            <li><Link>Blogs</Link></li>
+            <li className="text-xl font-bold text-amber-700"><Link>Blogs</Link></li>
         </>
 
 
     return (
-        <div className="bg-stone-100">
-            <div className="mx-8 lg:mx-20 py-12">
-                <div className="navbar ">
-                    <div className="navbar-start">
+        <div className="bg-stone-200">
+            <div className="mx-5 py-12">
+                <div className="navbar">
+                    <div className={user?.email ? 'justify-start 1/2 lg:w-1/3' : 'justify-start w-10/12'}>
                         <div className="dropdown mr-3">
                             <label tabIndex={0} className="btn btn-ghost lg:hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -59,13 +57,68 @@ const Navbar = () => {
                             </h2>
                         </div>
                     </div>
-                    <div className="navbar-center hidden lg:flex">
+                    <div className={user?.email ? "justify-center w-1/3  hidden lg:flex" : 'justify-end w-auto  hidden lg:flex'}>
                         <ul className="menu menu-horizontal px-1 font-semibold">
                             {navLinks}
                         </ul>
                     </div>
-                    <div className="navbar-end">
+                    <div className={user?.email ? 'justify-end w-1/2 lg:w-1/3' : 'justify-end w-auto'}>
+                        {
+                            user?.email ?
+                                user?.photoURL ?
+                                    <div className="dropdown dropdown-bottom dropdown-end">
+                                        <label tabIndex={0}>
+                                            {
+                                                user?.displayName ?
+                                                    <div className="dropdown dropdown-hover">
+                                                        <label tabIndex={0}>
+                                                            <div className="avatar">
+                                                                <div className="w-14 rounded-full">
+                                                                    <img src={user.photoURL} />
+                                                                </div>
+                                                            </div>
+                                                        </label>
+                                                        <ul style={{ pointerEvents: 'none' }} tabIndex={0} className="dropdown-content p-3 px-5 shadow bg-blue-300 text-xl font-semibold rounded-box w-52">
+                                                            <li>{user?.displayName}</li>
+                                                        </ul>
+                                                    </div> :
+                                                    <div className="avatar">
+                                                        <div className="w-14 rounded-full">
+                                                            <img src={user.photoURL} />
+                                                        </div>
+                                                    </div>
+                                            }
+                                        </label>
+                                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-stone-700 text-white rounded-box font-semibold w-52">
+                                            <li onClick={handleLogOut}><a>Log out</a></li>
+                                        </ul>
+                                    </div>
+                                    :
+                                    <div className="dropdown dropdown-bottom dropdown-end">
+                                        <label tabIndex={0}>
+                                            {
+                                                user?.displayName ?
+                                                    <div className="dropdown dropdown-hover">
+                                                        <label tabIndex={0}>
+                                                            <FaUserCircle style={{ fontSize: '3rem' }}></FaUserCircle>
+                                                        </label>
+                                                        <ul style={{ pointerEvents: 'none' }} tabIndex={0} className="dropdown-content p-3 px-5 shadow bg-blue-300 text-xl font-semibold rounded-box w-52">
+                                                            <li>{user?.displayName}</li>
+                                                        </ul>
+                                                    </div> :
+                                                    <FaUserCircle style={{ fontSize: '3rem' }}></FaUserCircle>
+                                            }
+                                        </label>
+                                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-stone-700 text-white rounded-box font-semibold w-52">
+                                            <li onClick={handleLogOut}><a>Log out</a></li>
+                                        </ul>
+                                    </div>
+                                :
+                                <Link to="/login">
+                                    <button className="btn w-24 h-14 bg-green-700 border-none normal-case text-xl">Login</button>
+                                </Link>
 
+                        }
                     </div>
                 </div>
             </div>

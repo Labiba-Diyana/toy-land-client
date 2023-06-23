@@ -10,7 +10,7 @@ const TabSection = () => {
     const [secondTab, setSecondTab] = useState([]);
     const [thirdTab, setThirdTab] = useState([]);
     useEffect(() => {
-        fetch('toy.json')
+        fetch('http://localhost:5000/tabs')
             .then(res => res.json())
             .then(data => {
                 const teddy = data.filter(ted => ted.subCategory === 'teddy');
