@@ -10,6 +10,8 @@ import MyToys from "../pages/MyToys/MyToys";
 import PrivateRoute from "./PrivateRoute";
 import UpdatedInfo from "../pages/UpdateInfo/UpdatedInfo";
 import TabView from "../pages/TabView/TabView";
+import PrivateRouteVDetails from "./PrivateRouteVDetails";
+import Blogs from "../pages/Blogs/Blogs";
 
 
 const router = createBrowserRouter([
@@ -23,7 +25,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/tabsView/:id",
-          element: <TabView></TabView>,
+          element: <PrivateRouteVDetails><TabView></TabView></PrivateRouteVDetails>,
           loader: ({params}) => fetch(`http://localhost:5000/tabs/${params.id}`)
         },
         {
@@ -33,20 +35,12 @@ const router = createBrowserRouter([
         },
         {
           path: "/toy/:id",
-          element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
+          element: <PrivateRouteVDetails><ViewDetails></ViewDetails></PrivateRouteVDetails>,
           loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`) 
         },
         {
           path:"/addAToy",
-          element: <AddAToy></AddAToy>
-        },
-        {
-          path:"/login",
-          element: <Login></Login>
-        },
-        {
-          path: "/register",
-          element: <Register></Register>
+          element: <PrivateRoute><AddAToy></AddAToy></PrivateRoute>
         },
         {
           path: "/myToys",
@@ -56,7 +50,19 @@ const router = createBrowserRouter([
           path: "/update/:id",
           element: <UpdatedInfo></UpdatedInfo>,
           loader: ({params}) => fetch(`http://localhost:5000/toys/myToys/${params.id}`)
-        }
+        },
+        {
+          path: "/blogs",
+          element: <Blogs></Blogs>
+        },
+        {
+          path:"/login",
+          element: <Login></Login>
+        },
+        {
+          path: "/register",
+          element: <Register></Register>
+        },
       ]
     },
   ]);

@@ -28,13 +28,13 @@ const Navbar = () => {
                     </>
                     : <></>
             }
-            <li className="text-xl font-bold text-amber-700"><Link>Blogs</Link></li>
+            <li className="text-xl font-bold text-amber-700"><Link to="/blogs">Blogs</Link></li>
         </>
 
 
     return (
         <div className="bg-stone-200">
-            <div className="mx-5 py-12">
+            <div className="px-7 py-12">
                 <div className="navbar">
                     <div className={user?.email ? 'justify-start 1/2 lg:w-1/3' : 'justify-start w-10/12'}>
                         <div className="dropdown mr-3">

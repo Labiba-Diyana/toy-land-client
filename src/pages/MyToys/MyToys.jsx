@@ -28,7 +28,7 @@ const MyToys = () => {
     }, []);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toys/myToys/descending??email=${user.email}`)
+        fetch(`http://localhost:5000/toys/myToys/descending?email=${user.email}`)
             .then(res => res.json())
             .then(data => setDescending(data))
     }, []);

@@ -4,6 +4,8 @@ import img from '../../assets/images/special/registerImg.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import Swal from 'sweetalert2';
+import { FaGoogle } from 'react-icons/fa';
 
 
 const Register = () => {
@@ -23,13 +25,17 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                update(result.user, name, photo);
                 if(user){
-                    alert('user have found')
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: 'You account has been successfully registered.',
+                      })
                 }
-                update(result.user, name, photo)
             })
             .catch(error => {
-                console.log(error);
+                alert(error.message);
             })
 
             const update = (user, name, photo) => {
@@ -38,10 +44,10 @@ const Register = () => {
                     photoURL: photo
                 })
                 .then(() => {
-                    console.log('first')
+                    console.log('Profile has been updated')
                 })
                 .catch(error => {
-                    console.log(error.message)
+                    alert(error.message)
                 })
             }
     }
@@ -52,11 +58,17 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 if (user) {
-                    alert('You have successfully logged in');
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: 'You have successfully logged in with your google account.',
+                      })
                 }
             })
             .catch(error => {
-                console.log(error);
+                if(error){
+                    alert(error.message)
+                }
             })
     }
 
@@ -72,35 +84,36 @@ const Register = () => {
                         <form onSubmit={handleRegister} className='space-y-3'>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-lg font-semibold">Name</span>
+                                    <span className="label-text text-xl font-semibold">Name</span>
                                 </label>
                                 <input type="text" name="name" placeholder="name" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-lg font-semibold">Email</span>
+                                    <span className="label-text text-xl font-semibold">Email</span>
                                 </label>
                                 <input type="text" name="email" placeholder="email" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-lg font-semibold">Password</span>
+                                    <span className="label-text text-xl font-semibold">Password</span>
                                 </label>
                                 <input type="text" name="password" placeholder="password" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-lg font-semibold">Photo URL</span>
+                                    <span className="label-text text-xl font-semibold">Photo URL</span>
                                 </label>
                                 <input type="text" name="photo" placeholder="photo URL" className="input input-bordered" />
                             </div>
                             <div className="form-control pt-5">
-                                <button type='submit' className="btn bg-green-600">Register</button>
+                                <button type='submit' className="btn bg-green-600 text-lg font-semibold border-none">Register</button>
                             </div>
                         </form>
                         <p className='text-center pt-2 text-lg font-medium text-stone-500'>Already have an account? <Link to="/login" className='text-green-600 text-xl'>Login</Link></p>
                         <div className="divider py-4">OR</div>
-                        <button onClick={handleGoogleLogin} className="btn btn-outline font-bold w-full btn-success">Continue With Google</button>
+                        <button onClick={handleGoogleLogin} className="btn btn-outline text-lg font-bold w-full btn-success">
+                        <FaGoogle className='mr-3 text-2xl'></FaGoogle>   Continue With Google</button>
                     </div>
                 </div>
             </div>
