@@ -1,13 +1,16 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Toy = ({ toy }) => {
-    const { _id, toyName, name, subCategory, price, quantity } = toy;
+    const {user} = useContext(AuthContext);
+    const { _id, toyName,  subCategory, price, quantity } = toy;
     console.log(typeof(price))
 
     return (
         <tr>
-            <td className="pl-20 text-lg font-semibold">{name}</td>
+            <td className="pl-20 text-lg font-semibold">{user?.displayName}</td>
             <td className="pl-20 text-lg font-semibold">{toyName}</td>
             <td className="pl-20 text-lg font-semibold">{subCategory}</td>
             <td className="pl-20 text-lg font-semibold">${price}</td>
