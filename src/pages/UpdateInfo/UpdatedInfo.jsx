@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-import img from '../../assets/images/background/d.png'
+import img from '../../assets/images/special/update.png'
 
 
 const UpdatedInfo = () => {

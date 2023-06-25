@@ -36,7 +36,7 @@ const MyToy = ({ toy, handleDelete }) => {
             <td className="text-lg font-semibold">{rating}</td>
             <td className="text-lg font-semibold">{quantity}</td>
             <td className="text-lg font-semibold">
-                <div className="dropdown">
+                <div className="dropdown dropdown-hover">
                     <label tabIndex={0} className="m-1"><button className="btn btn-ghost text-lg font-extrabold text-indigo-800 btn-xs">Details</button></label>
                     <div tabIndex={0} className="dropdown-content card card-compact w-96 p-2 shadow bg-primary text-primary-content">
                         <div className="card-body whitespace-pre-line w-full">

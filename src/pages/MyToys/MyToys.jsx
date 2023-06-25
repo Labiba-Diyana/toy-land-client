@@ -2,7 +2,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import MyToy from "./MyToy";
-import img from "../../assets/images/background/bg-myToys.png"
+import bg from "../../assets/images/background/bg-myToys.png"
 import Swal from "sweetalert2";
 
 
@@ -72,7 +72,7 @@ const MyToys = () => {
     }
 
     return (
-        <div style={{ backgroundImage: `url(${img})` }} className="text-center pt-32 pb-48 bg-[#c8901f38]">
+        <div style={{ backgroundImage: `url(${bg})` }} className="text-center pt-32 pb-48 bg-[#c8901f38]">
             <h2 className="text-5xl font-bold text-amber-800 underline underline-offset-8 decoration-4 mb-20">My Toys</h2>
             <div className="px-20">
                 <div className="dropdown dropdown-bottom flex justify-end pb-8 pr-3">

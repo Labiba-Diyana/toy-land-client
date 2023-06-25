@@ -1,6 +1,7 @@
 import Swal from 'sweetalert2'
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import img from '../../assets/images/special/addToy.png'
 
 
 const AddAToy = () => {
@@ -47,7 +48,7 @@ const AddAToy = () => {
     return (
         <div className="bg-[#53ab2329] pb-14">
             <div className="text-center py-40 w-8/12 mx-auto">
-                <form onSubmit={handleAddAToy} style={{ backgroundImage: "url(https://images.pexels.com/photos/8923955/pexels-photo-8923955.jpeg?auto=compress&cs=tinysrgb&w=1600)" }} className="p-16 rounded-xl shadow-2xl">
+                <form onSubmit={handleAddAToy} style={{ backgroundImage: `url(${img})` }} className="p-16 rounded-xl shadow-2xl">
                     <h2 className="text-4xl font-bold text-amber-800 underline underline-offset-4 decoration-4 pb-14 ">ADD A TOY</h2>
                     {/* first row */}
                     <div className="flex">

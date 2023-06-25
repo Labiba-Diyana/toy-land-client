@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Toy from "./Toy";
-import img from '../../assets/images/background/bg-all-toys.png'
+import bg from '../../assets/images/background/bg-all-toys.png'
 import { useState } from "react";
 
 
@@ -28,7 +28,7 @@ const AllToys = () => {
     }
 
     return (
-        <div style={{ backgroundImage: `url(${img})` }} className="text-center  py-20 bg-[#c8901f38]">
+        <div style={{ backgroundImage: `url(${bg})` }} className="text-center  py-20 bg-[#c8901f38]">
             <h2 className="text-5xl font-bold text-amber-800 underline underline-offset-8 decoration-4 mb-16">All Toys</h2>
             <form onSubmit={handleSearch} className="flex justify-center mb-5">
                 <div className="form-control">

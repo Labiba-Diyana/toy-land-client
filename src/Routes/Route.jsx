@@ -12,6 +12,7 @@ import UpdatedInfo from "../pages/UpdateInfo/UpdatedInfo";
 import TabView from "../pages/TabView/TabView";
 import PrivateRouteVDetails from "./PrivateRouteVDetails";
 import Blogs from "../pages/Blogs/Blogs";
+import LostPage from "../pages/LostPage/LostPage";
 
 
 const router = createBrowserRouter([
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
         },
       ]
     },
+    {
+      path: "*",
+      element: <LostPage></LostPage>
+    }
   ]);
 
   export default router;

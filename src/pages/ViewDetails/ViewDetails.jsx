@@ -1,12 +1,12 @@
 import { useLoaderData } from "react-router-dom";
-import img from '../../assets/images/background/bg-details.png'
+import bg from '../../assets/images/background/bg-details.png'
 
 const ViewDetails = () => {
     const toy = useLoaderData();
     console.log(toy);
     const { picture, toyName, name, email, price, rating, quantity, detail } = toy;
     return (
-        <div style={{ backgroundImage: `url(${img})` }} className="pt-28 pb-64 text-center">
+        <div style={{ backgroundImage: `url(${bg})` }} className="pt-28 pb-64 text-center">
             <h2 className="text-5xl font-bold text-amber-800 underline underline-offset-8 decoration-4 mb-24">Toy Details</h2>
             <div className=" bg-green-100 w-10/12 mx-auto rounded-xl p-20 flex space-x-24 shadow-2xl">                
                     <img src={picture} className="w-[600px] h-full shadow-2xl  rounded-xl" />
