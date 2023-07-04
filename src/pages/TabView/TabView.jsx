@@ -1,9 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 import img from '../../assets/images/background/bg-details.png'
+import useTitle from "../../hooks/useTitle";
+import { Rating } from "@smastrom/react-rating";
 
 
 const TabView = () => {
     const toy = useLoaderData();
+    useTitle('Toy Details')
     const { picture, sellerName, name, sellerEmail, price, rating, quantity, description } = toy;
     return (
         <div>
@@ -18,7 +21,11 @@ const TabView = () => {
                                 <p><span className="text-2xl font-bold pr-2">Seller Name : </span> {sellerName}</p>
                                 <p><span className="text-2xl font-bold pr-2">Seller Email : </span> {sellerEmail}</p>
                                 <p><span className="text-2xl font-bold pr-2">Price : </span> {price}</p>
-                                <p><span className="text-2xl font-bold pr-2">Rating : </span> {rating}</p>
+                                <div className="flex items-center">
+                                    <p className="mr-2"><span className="text-2xl font-bold pr-2">Rating : </span>{rating}</p>
+                                    <Rating style={{ maxWidth: 130 }} value={Math.round(rating)} readOnly />
+                                    <p className="font-bold text-base text-stone-500 pl-5">(out of 5)</p>
+                                </div>
                                 <p><span className="text-2xl font-bold pr-2">Available Quantity : </span> {quantity}</p>
                                 <p><span className="text-2xl font-bold pr-2">Detail Description : </span> {description}</p>
                             </div>

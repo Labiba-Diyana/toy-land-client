@@ -1,3 +1,4 @@
+import useTitle from "../../../hooks/useTitle";
 import Banner from "../Banner/Banner";
 import CustomerReview from "../CustomerReview/CustomerReview";
 import Gallery from "../Gallery/Gallery";
@@ -6,6 +7,7 @@ import TabSection from "../TabSection/TabSection";
 
 
 const Home = () => {
+    useTitle('Home');
     return (
         <div className="bg-stone-100">
             <Banner></Banner>

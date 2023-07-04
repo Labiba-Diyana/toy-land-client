@@ -4,6 +4,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import MyToy from "./MyToy";
 import bg from "../../assets/images/background/bg-myToys.png"
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 
 
@@ -12,7 +13,7 @@ const MyToys = () => {
     const [toys, setToys] = useState([]);
     const [descending, setDescending] = useState([]);
     const [ascending, setAscending] = useState([]);
-
+    useTitle('My Toys');
 
 
     useEffect(() => {

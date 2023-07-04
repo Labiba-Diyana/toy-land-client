@@ -1,3 +1,4 @@
+import './Gallery.css'
 import img1 from '../../../assets/images/gallery/img1.png'
 import img2 from '../../../assets/images/gallery/img2.png'
 import img3 from '../../../assets/images/gallery/img3.png'
@@ -14,21 +15,45 @@ import img12 from '../../../assets/images/gallery/img12.png'
 const Gallery = () => {
     return (
         <div className='w-10/12 mx-auto my-32 text-center'>
-            <h2 className='text-6xl font-bold mb-14'>Gallery Zone</h2>
-            <div className='grid grid-cols-4 gap-4 place-items-center border-0 lg:border-8 border-amber-600'>
-            <img src={img1} alt="" />
-            <img src={img2} alt="" />
-            <img src={img3} alt="" />
-            <img src={img4} alt="" />
-            <img src={img5} alt="" />
-            <img src={img6} alt="" />
-            <img src={img7} alt="" />
-            <img src={img8} alt="" />
-            <img src={img9} alt="" />
-            <img src={img10} alt="" />
-            <img src={img11} alt="" />
-            <img src={img12} alt="" />
-        </div>
+            <h2 className='text-6xl font-bold mb-14 text-amber-800'>Gallery Zone</h2>
+            <div className='grid grid-cols-4 gap-4 place-items-center bog'>
+                <div className='img-hover-zoom'>
+                    <img src={img1} alt="" />
+                </div>
+                <div className='img-hover-zoom'>
+                    <img src={img2} alt="" />
+                </div>
+                <div className='img-hover-zoom'>
+                    <img src={img3} alt="" />
+                </div>
+                <div className='img-hover-zoom'>
+                    <img src={img4} alt="" />
+                </div>
+                <div className='img-hover-zoom'>
+                    <img src={img5} alt="" />
+                </div>
+                <div className='img-hover-zoom'>
+                    <img src={img6} alt="" />
+                </div>
+                <div className='img-hover-zoom'>
+                    <img src={img7} alt="" />
+                </div>
+                <div className='img-hover-zoom'>
+                    <img src={img8} alt="" />
+                </div>
+                <div className='img-hover-zoom'>
+                    <img src={img9} alt="" />
+                </div>
+                <div className='img-hover-zoom'>
+                    <img src={img10} alt="" />
+                </div>
+                <div className='img-hover-zoom'>
+                    <img src={img11} alt="" />
+                </div>
+                <div className='img-hover-zoom'>
+                    <img src={img12} alt="" />
+                </div>
+            </div>
         </div>
     );
 };

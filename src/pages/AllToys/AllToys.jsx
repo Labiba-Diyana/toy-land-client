@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Toy from "./Toy";
 import bg from '../../assets/images/background/bg-all-toys.png'
 import { useState } from "react";
+import useTitle from "../../hooks/useTitle";
 
 
 
@@ -9,6 +10,7 @@ const AllToys = () => {
     const toyData = useLoaderData();
     const data = useLoaderData();
     const [toys, setToys] = useState(toyData);
+    useTitle('All Toys')
 
     const handleSearch = (event) => {
         event.preventDefault();

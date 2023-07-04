@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import {  FaArrowCircleLeft } from 'react-icons/fa';
 import img from '../../assets/images/special/lostPage.gif'
+import useTitle from '../../hooks/useTitle';
 
 const LostPage = () => {
+    useTitle('404');
     return (
         <div className='relative'>
             <img className='w-screen h-screen' src={img} alt="" />

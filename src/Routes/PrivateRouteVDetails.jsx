@@ -19,9 +19,8 @@ const PrivateRouteVDetails = ({children}) => {
 
     else{
         Swal.fire({
-            icon: 'info',
             title: 'Sorry!',
-            text: 'You have to log in first to view details',
+            text: 'You have to log in first to view details.',
           })
         return <Navigate to="/login" state={{ from: location }} replace></Navigate>
     }

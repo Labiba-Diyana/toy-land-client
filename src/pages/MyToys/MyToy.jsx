@@ -33,7 +33,7 @@ const MyToy = ({ toy, handleDelete }) => {
             </td>
             <td className="text-lg font-semibold">{subCategory}</td>
             <td className="text-lg font-semibold">${price}</td>
-            <td className="text-lg font-semibold">{rating}</td>
+            <td className="text-lg font-semibold">{rating} (out of 5)</td>
             <td className="text-lg font-semibold">{quantity}</td>
             <td className="text-lg font-semibold">
                 <div className="dropdown dropdown-hover">

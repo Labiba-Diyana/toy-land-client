@@ -6,11 +6,13 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import Swal from 'sweetalert2';
 import { FaGoogle } from 'react-icons/fa';
+import useTitle from '../../hooks/useTitle';
 
 
 const Register = () => {
 
     const { createUser, googleLogin } = useContext(AuthContext);
+    useTitle('Register');
 
     const handleRegister = event => {
         event.preventDefault();

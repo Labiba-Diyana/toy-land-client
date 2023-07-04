@@ -2,11 +2,13 @@ import Swal from 'sweetalert2'
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import img from '../../assets/images/special/addToy.png'
+import useTitle from '../../hooks/useTitle';
 
 
 const AddAToy = () => {
 
     const {user} = useContext(AuthContext);
+    useTitle('Add A Toy')
 
     const handleAddAToy = event => {
         event.preventDefault();
