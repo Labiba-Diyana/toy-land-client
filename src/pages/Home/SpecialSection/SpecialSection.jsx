@@ -20,7 +20,7 @@ const SpecialSection = () => {
                             <p className='text-stone-500 text-xs lg:text-2xl whitespace-pre-line'>We will donate three percent of revenue of each toy what we gonna earn from selling that. This is to a child within the autism spectrum and his family the early intervention services that will change their condition. We are working with <a href="https://www.acwf-bd.org/" className="text-blue-800 font-semibold underline underline-offset-2">AUTISTIC CHILDREN WELFARE FOUNDATION</a> Your one help is enough for a child future.
                             </p>
                             <div className="flex justify-center">
-                                <button className='bg-green-600 hidden lg:block text-white text-center font-semibold py-4 px-9 text-2xl rounded-md'>Buy Now</button>
+                                <a href="https://www.acwf-bd.org/"><button className=' bg-green-600 hidden lg:block text-white text-center font-semibold py-4 px-9 text-2xl rounded-md'>Donate Now</button></a>
                             </div>
                         </div>
                     </div>
