@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {  FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa';
+import { FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa';
 
 
 const CustomerReview = () => {
@@ -35,12 +35,11 @@ const CustomerReview = () => {
         }
     }
 
-
     return (
         <div className="text-center my-20 lg:my-36 w-9/12 mx-auto">
             <div className="space-y-5 lg:space-y-7 mb-20 lg:mb-24">
                 <h1 className="text-3xl lg:text-6xl font-bold text-amber-800">Happy Customer</h1>
-                <p className='text-xs lg:text-xl text-stone-600'>There are some review from some of our  happy <br className="hidden lg:block"/> customer. Hope this will help you. Cause customer satisfaction is our first priority.</p>
+                <p className='text-xs lg:text-xl text-stone-600'>There are some review from some of our  happy <br className="hidden lg:block" /> customer. Hope this will help you. Cause customer satisfaction is our first priority.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-white">
                 <div className="card shadow-xl bg-blue-900">
@@ -141,7 +140,6 @@ const CustomerReview = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     );

@@ -7,7 +7,7 @@ import useTitle from '../../hooks/useTitle';
 
 const AddAToy = () => {
 
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     useTitle('Add A Toy')
 
     const handleAddAToy = event => {
@@ -22,29 +22,27 @@ const AddAToy = () => {
         const rating = parseFloat(form.rating.value)
         const quantity = parseFloat(form.quantity.value);
         const detail = form.detail.value;
-
         const newToy = { picture, toyName, name, email, subCategory, price, rating, quantity, detail };
         form.reset();
 
-
-        fetch('http://localhost:5000/toys', {
+        fetch('https://toy-store-server-six.vercel.app/toys', {
             method: "POST",
             headers: {
                 "content-type": "application/json",
             },
             body: JSON.stringify(newToy)
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data.insertedId){
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Your toy has been added successfully.',
-                    icon: 'success',
-                    confirmButtonText: 'OK'
-                  })
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Your toy has been added successfully.',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    })
+                }
+            })
     }
 
     return (
@@ -118,11 +116,9 @@ const AddAToy = () => {
                         </label>
                         <textarea placeholder="Detail Description" name="detail" className="textarea textarea-bordered textarea-lg mr-10 border border-amber-600" ></textarea>
                     </div>
-
                     <div className="flex mt-12 mx-5">
                         <input type="submit" value="Add Now" className='btn btn-block mr-10 bg-amber-700 h-16 text-2xl border-none' />
                     </div>
-
                 </form>
             </div>
         </div>

@@ -8,6 +8,7 @@ const TabView = () => {
     const toy = useLoaderData();
     useTitle('Toy Details')
     const { picture, sellerName, name, sellerEmail, price, rating, quantity, description } = toy;
+
     return (
         <div>
             <div style={{ backgroundImage: `url(${img})` }} className="pt-28 pb-64 text-center">

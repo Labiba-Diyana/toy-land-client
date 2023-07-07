@@ -27,17 +27,17 @@ const router = createBrowserRouter([
         {
           path: "/tabsView/:id",
           element: <PrivateRouteVDetails><TabView></TabView></PrivateRouteVDetails>,
-          loader: ({params}) => fetch(`http://localhost:5000/tabs/${params.id}`)
+          loader: ({params}) => fetch(`https://toy-store-server-six.vercel.app/tabs/${params.id}`)
         },
         {
           path: "/allToys",
           element: <AllToys></AllToys>,
-          loader: () => fetch('http://localhost:5000/toys')
+          loader: () => fetch('https://toy-store-server-six.vercel.app/toys')
         },
         {
           path: "/toy/:id",
           element: <PrivateRouteVDetails><ViewDetails></ViewDetails></PrivateRouteVDetails>,
-          loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`) 
+          loader: ({params}) => fetch(`https://toy-store-server-six.vercel.app/toys/${params.id}`) 
         },
         {
           path:"/addAToy",
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         {
           path: "/update/:id",
           element: <UpdatedInfo></UpdatedInfo>,
-          loader: ({params}) => fetch(`http://localhost:5000/toys/myToys/${params.id}`)
+          loader: ({params}) => fetch(`https://toy-store-server-six.vercel.app/toys/myToys/${params.id}`)
         },
         {
           path: "/blogs",

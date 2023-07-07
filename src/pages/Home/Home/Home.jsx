@@ -8,6 +8,7 @@ import TabSection from "../TabSection/TabSection";
 
 const Home = () => {
     useTitle('Home');
+
     return (
         <div className="bg-stone-100">
             <Banner></Banner>

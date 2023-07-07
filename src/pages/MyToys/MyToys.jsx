@@ -6,8 +6,6 @@ import bg from "../../assets/images/background/bg-myToys.png"
 import Swal from "sweetalert2";
 import useTitle from "../../hooks/useTitle";
 
-
-
 const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [toys, setToys] = useState([]);
@@ -15,21 +13,20 @@ const MyToys = () => {
     const [ascending, setAscending] = useState([]);
     useTitle('My Toys');
 
-
     useEffect(() => {
-        fetch(`http://localhost:5000/toys/myToys?email=${user.email}`)
+        fetch(`https://toy-store-server-six.vercel.app/toys/myToys?email=${user.email}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, []);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toys/myToys/ascending?email=${user.email}`)
+        fetch(`https://toy-store-server-six.vercel.app/toys/myToys/ascending?email=${user.email}`)
             .then(res => res.json())
             .then(data => setAscending(data))
     }, []);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toys/myToys/descending?email=${user.email}`)
+        fetch(`https://toy-store-server-six.vercel.app/toys/myToys/descending?email=${user.email}`)
             .then(res => res.json())
             .then(data => setDescending(data))
     }, []);
@@ -53,7 +50,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/toys/myToys/${id}`, {
+                fetch(`https://toy-store-server-six.vercel.app/toys/myToys/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

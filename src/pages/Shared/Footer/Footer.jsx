@@ -4,7 +4,7 @@ import logo from '../../../assets/logo.svg'
 const Footer = () => {
 
     const handleCall = () => {
-       alert('Do you want to contact with ToyLand?')
+        alert('Do you want to contact with ToyLand?')
     }
 
     return (

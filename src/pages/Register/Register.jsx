@@ -8,7 +8,6 @@ import Swal from 'sweetalert2';
 import { FaGoogle } from 'react-icons/fa';
 import useTitle from '../../hooks/useTitle';
 
-
 const Register = () => {
 
     const { createUser, googleLogin } = useContext(AuthContext);
@@ -28,30 +27,30 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 update(result.user, name, photo);
-                if(user){
+                if (user) {
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
                         text: 'You account has been successfully registered.',
-                      })
+                    })
                 }
             })
             .catch(error => {
                 alert(error.message);
             })
 
-            const update = (user, name, photo) => {
-                updateProfile(user, {
-                    displayName: name,
-                    photoURL: photo
-                })
+        const update = (user, name, photo) => {
+            updateProfile(user, {
+                displayName: name,
+                photoURL: photo
+            })
                 .then(() => {
                     console.log('Profile has been updated')
                 })
                 .catch(error => {
                     alert(error.message)
                 })
-            }
+        }
     }
 
     const handleGoogleLogin = () => {
@@ -64,11 +63,11 @@ const Register = () => {
                         icon: 'success',
                         title: 'Success',
                         text: 'You have successfully logged in with your google account.',
-                      })
+                    })
                 }
             })
             .catch(error => {
-                if(error){
+                if (error) {
                     alert(error.message)
                 }
             })
@@ -115,7 +114,7 @@ const Register = () => {
                         <p className='text-center pt-2 text-lg font-medium text-stone-500'>Already have an account? <Link to="/login" className='text-green-600 text-xl'>Login</Link></p>
                         <div className="divider py-4">OR</div>
                         <button onClick={handleGoogleLogin} className="btn btn-outline text-lg font-bold w-full btn-success">
-                        <FaGoogle className='mr-3 text-2xl'></FaGoogle>   Continue With Google</button>
+                            <FaGoogle className='mr-3 text-2xl'></FaGoogle>   Continue With Google</button>
                     </div>
                 </div>
             </div>

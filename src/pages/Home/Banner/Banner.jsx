@@ -41,7 +41,6 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-
             <div className="flex justify-center w-10/12 lg:w-full  py-2 gap-2 mt-[-40px] lg:mt-[-60px] absolute">
                 <a href="#item1" className="btn btn-xs">1</a>
                 <a href="#item2" className="btn btn-xs">2</a>

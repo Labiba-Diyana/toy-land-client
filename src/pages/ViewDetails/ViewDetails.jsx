@@ -8,6 +8,7 @@ const ViewDetails = () => {
     useTitle('Toy Details');
     console.log(toy);
     const { picture, toyName, name, email, price, rating, quantity, detail } = toy;
+
     return (
         <div style={{ backgroundImage: `url(${bg})` }} className="pt-28 pb-64 text-center">
             <h2 className="text-5xl font-bold text-amber-800 underline underline-offset-8 decoration-4 mb-24">Toy Details</h2>

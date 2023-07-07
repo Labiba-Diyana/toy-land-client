@@ -4,8 +4,6 @@ import bg from '../../assets/images/background/bg-all-toys.png'
 import { useState } from "react";
 import useTitle from "../../hooks/useTitle";
 
-
-
 const AllToys = () => {
     const toyData = useLoaderData();
     const data = useLoaderData();
@@ -22,7 +20,7 @@ const AllToys = () => {
         }
         else {
             setToys(null);
-        } 
+        }
     }
 
     const handleToSeeAll = () => {

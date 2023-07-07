@@ -31,7 +31,6 @@ const Navbar = () => {
             <li className="text-xl font-bold text-amber-700"><Link to="/blogs">Blogs</Link></li>
         </>
 
-
     return (
         <div className="bg-stone-200">
             <div className="px-3 lg:px-7 py-3 lg:py-12">

@@ -10,7 +10,7 @@ const TabSection = () => {
     const [secondTab, setSecondTab] = useState([]);
     const [thirdTab, setThirdTab] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/tabs')
+        fetch('https://toy-store-server-six.vercel.app/tabs')
             .then(res => res.json())
             .then(data => {
                 const teddy = data.filter(ted => ted.subCategory === 'teddy');
@@ -21,6 +21,7 @@ const TabSection = () => {
                 setThirdTab(unicorn);
             })
     }, [])
+
     return (
         <div className='my-16 lg:my-20 w-10/12 mx-auto'>
             <div className='text-center text-amber-800 mb-14 space-y-5 lg:space-y-7'>

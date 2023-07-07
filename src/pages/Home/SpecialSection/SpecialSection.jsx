@@ -4,6 +4,7 @@ import 'aos/dist/aos.css';
 
 const SpecialSection = () => {
     AOS.init();
+
     return (
         <div className="pb-24 lg:pb-44 pt-5 lg:pt-0">
             <div className="text-center w-10/12 mx-auto pb-12">

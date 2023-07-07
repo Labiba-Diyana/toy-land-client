@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 
-
 const Toy = ({ toy }) => {
-    const { _id, toyName,  subCategory, price, quantity } = toy;
-    console.log(typeof(price))
+    const { _id, toyName, subCategory, price, quantity } = toy;
+    console.log(typeof (price))
 
     return (
         <tr>
