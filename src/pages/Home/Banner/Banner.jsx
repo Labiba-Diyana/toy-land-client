@@ -5,8 +5,8 @@ import './Banner.css'
 
 const Banner = () => {
     return (
-        <div className='mx-8 lg:mx-0 pb-0'>
-            <div className="carousel w-full h-[350px] lg:h-[850px] rounded-lg">
+        <div className='mx-6 lg:mx-0 pt-12 lg:pt-0'>
+            <div className="carousel w-full h-[370px] lg:h-[850px] rounded-lg">
                 <div id="item1" className="carousel-item w-full relative" >
                     <img src={banner1} className="w-full" />
                     <div className='absolute h-full w-9/12 left-0 top-0 flex items-center bg-gradient-to-r from-[#cd9155ee] to-[rgba(21, 21, 21, 0)]'>

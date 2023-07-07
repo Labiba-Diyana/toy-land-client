@@ -71,13 +71,13 @@ const AddAToy = () => {
                     <div className="flex">
                         <div className="form-control w-1/2 mx-5">
                             <label className="label">
-                                <span className="label-text text-lg font-medium">User Name</span>
+                                <span className="label-text text-lg font-medium">Seller Name</span>
                             </label>
                             <input type="text" name="name" defaultValue={user?.displayName} placeholder="User Name" className="input input-bordered w-full border border-amber-600" />
                         </div>
                         <div className="form-control w-1/2 mx-5">
                             <label className="label">
-                                <span className="label-text text-lg font-medium">User Email</span>
+                                <span className="label-text text-lg font-medium">Seller Email</span>
                             </label>
                             <input type="text" name="email" defaultValue={user?.email} readOnly placeholder="Email" className="input input-bordered w-full border border-amber-600" />
                         </div>

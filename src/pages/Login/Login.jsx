@@ -14,7 +14,7 @@ const Login = () => {
     const navigate = useNavigate();
     useTitle('Login');
 
-    const from = location.state?.from?.pathname || "/"
+    const from = location.state?.from?.pathname || "/login"
 
     const handleLogin = event => {
         event.preventDefault();
@@ -85,7 +85,7 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text text-xl font-semibold">Password</span>
                                 </label>
-                                <input type="text" name="password" placeholder="password" className="input input-bordered" />
+                                <input type="password" name="password" placeholder="password" className="input input-bordered" />
                             </div>
                             <div className="form-control pt-5">
                                 <button type='submit' className="btn bg-green-600 text-lg font-semibold border-none">Login</button>

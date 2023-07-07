@@ -56,7 +56,7 @@ const AllToys = () => {
                             {/* head */}
                             <thead>
                                 <tr className="text-3xl">
-                                    <th className="bg-amber-600 pl-20 text-xl">Name</th>
+                                    <th className="bg-amber-600 pl-20 text-xl">Seller Name</th>
                                     <th className="bg-amber-600 pl-20 text-xl">Toy Name</th>
                                     <th className="bg-amber-600 pl-20 text-xl">Sub-category</th>
                                     <th className="bg-amber-600 pl-20 text-xl">Price</th>
